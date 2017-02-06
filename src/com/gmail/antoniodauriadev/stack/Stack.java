@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.stack;
 
-public interface Stack<E> {
+interface Stack<E> {
 
     int size();
     boolean isEmpty();
