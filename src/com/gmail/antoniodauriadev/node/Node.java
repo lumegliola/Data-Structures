@@ -8,21 +8,20 @@ public class Node<E> {
      * element = null
      * next = null*/
     public Node() {
-        this.element = null;
-        this.next = null;
+        this(null, null);
     }
 
     /**Creates a new node.
      * @param element node's element.
      * @param next Link to the next node.*/
     public Node(E element, Node<E> next) {
-        this.element = element;
-        this.next = next;
+        setElement(element);
+        setNext(next);
     }
 
     /**@return The next node*/
     public Node<E> getNext() {
-        return next;
+        return this.next;
     }
 
     /**Set the next node
@@ -33,7 +32,7 @@ public class Node<E> {
 
     /**@return The nodes element*/
     public E getElement() {
-        return element;
+        return this.element;
     }
 
     /**Set the node's element

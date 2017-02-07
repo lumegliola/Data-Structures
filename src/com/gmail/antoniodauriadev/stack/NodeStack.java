@@ -19,32 +19,32 @@ public class NodeStack<E> implements Stack<E> {
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return this.size == 0;
     }
 
     @Override
     public E top() throws EmptyStackException {
         if(isEmpty())
-            throw new EmptyStackException("The Stack is empty.");
+            throw new EmptyStackException();
 
-        return top.getElement();
+        return this.top.getElement();
     }
 
     @Override
     public void push(E element) {
         Node<E> n = new Node<>(element, this.top);
-        size++;
+        this.size++;
         this.top = n;
     }
 
     @Override
     public E pop() throws EmptyStackException {
         if(isEmpty())
-            throw new EmptyStackException("The Stack is empty.");
+            throw new EmptyStackException();
 
-        E element = top.getElement();
-        top = top.getNext();
-        size--;
+        E element = this.top.getElement();
+        this.top = this.top.getNext();
+        this.size--;
         return element;
     }
 }
