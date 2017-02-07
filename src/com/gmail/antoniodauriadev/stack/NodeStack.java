@@ -14,7 +14,7 @@ public class NodeStack<E> implements Stack<E> {
 
     @Override
     public int size() {
-        return this.size();
+        return this.size;
     }
 
     @Override
