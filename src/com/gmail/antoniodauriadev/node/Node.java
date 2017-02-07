@@ -1,6 +1,5 @@
 package com.gmail.antoniodauriadev.node;
 
-
 public class Node<E> {
     private E element;
     private Node<E> next;
