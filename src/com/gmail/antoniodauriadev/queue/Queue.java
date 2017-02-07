@@ -2,19 +2,20 @@ package com.gmail.antoniodauriadev.queue;
 
 interface Queue<E> {
 
-    /**Returns the queue's size*/
+    /**@return The queue's size*/
     int size();
 
-    /**Returns true if the queue is empty*/
+    /**@return True if the queue is empty*/
     boolean isEmpty();
 
-    /**Returns the first queue's element*/
+    /**@return The first queue's element*/
     E front() throws EmptyQueueException;
 
     /**Adds an element at the queue's bottom*/
     void enqueue(E element);
 
-    /**Returns the first queue's element and also remove it*/
+    /**Removes the first queue's element
+     * @return The first queue's element*/
     E dequeue() throws EmptyQueueException;
 
 }
