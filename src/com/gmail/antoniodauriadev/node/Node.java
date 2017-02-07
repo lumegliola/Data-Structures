@@ -11,7 +11,6 @@ public class Node<E> {
     public Node() {
         this.element = null;
         this.next = null;
-
     }
 
     /**Creates a new node.
@@ -43,4 +42,5 @@ public class Node<E> {
     public void setElement(E element) {
         this.element = element;
     }
+
 }
