@@ -1,12 +1,16 @@
 package com.gmail.antoniodauriadev.arraylist;
 
-public interface ArrayList<E> {
+public interface IndexList<E> {
 
     /**@return The arraylist's size.*/
     int size();
 
     /**@return True if the arraylist is empty.*/
     boolean isEmpty();
+
+    /**Adds an element to the next position.
+     * @param element element to add.*/
+    void add(E element);
 
     /**Adds an element.
      * @param i position.
