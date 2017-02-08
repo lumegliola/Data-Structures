@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.arraylist;
 
-public interface IndexList<E> {
+interface IndexList<E> {
 
     /**@return The arraylist's size.*/
     int size();

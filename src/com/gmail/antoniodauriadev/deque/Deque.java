@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.deque;
 
-public interface Deque<E> {
+interface Deque<E> {
 
     /**@return The deque's size.*/
     int size();
