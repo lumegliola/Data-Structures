@@ -12,6 +12,7 @@ class ElementIterator<E> implements Iterator<E> {
     ElementIterator(ArrayIndexList<E> list) {
         this.list = list;
         this.cursor = 0;
+        this.removed = true;
     }
 
     @Override
