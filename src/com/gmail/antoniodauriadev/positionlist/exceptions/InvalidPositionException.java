@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.position.exceptions;
+package com.gmail.antoniodauriadev.positionlist.exceptions;
 
 public class InvalidPositionException extends RuntimeException {
 

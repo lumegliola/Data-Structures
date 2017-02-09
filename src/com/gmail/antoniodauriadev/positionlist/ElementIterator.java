@@ -1,4 +1,7 @@
-package com.gmail.antoniodauriadev.position;
+package com.gmail.antoniodauriadev.positionlist;
+
+import com.gmail.antoniodauriadev.position.Position;
+import com.gmail.antoniodauriadev.positionlist.PositionList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.position;
 
-interface Position<E> {
+public interface Position<E> {
 
     /**@return The element in this position.*/
     E element();
