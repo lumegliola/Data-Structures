@@ -17,26 +17,26 @@ class ElementIterator<E> implements Iterator<E> {
 
     @Override
     public boolean hasNext() {
-        return cursor < list.size();
+        return this.cursor < this.list.size();
     }
 
     @Override
     public E next() throws NoSuchElementException {
-        if (cursor >= list.size())
+        if (this.cursor >= this.list.size())
             throw new NoSuchElementException("There is not a next element.");
 
-        E toReturn = list.get(cursor);
-        cursor++;
-        removed = false;
+        E toReturn = this.list.get(this.cursor);
+        this.cursor++;
+        this.removed = false;
         return toReturn;
     }
 
     @Override
     public void remove() {
-        if (!removed) {
-            cursor--;
-            list.remove(cursor);
-            removed = true;
+        if (!this.removed) {
+            this.cursor--;
+            this.list.remove(this.cursor);
+            this.removed = true;
         }
     }
 }
