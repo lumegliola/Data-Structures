@@ -3,7 +3,7 @@ package com.gmail.antoniodauriadev.position;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ElementIterator<E> implements Iterator<E> {
+class ElementIterator<E> implements Iterator<E> {
 
     private PositionList<E> list;
     private Position<E> cursor;
