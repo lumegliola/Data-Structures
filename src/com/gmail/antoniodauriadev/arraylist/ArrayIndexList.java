@@ -1,5 +1,7 @@
 package com.gmail.antoniodauriadev.arraylist;
 
+import java.util.Iterator;
+
 public class ArrayIndexList<E> implements IndexList<E> {
 
     private E[] list;
@@ -75,5 +77,10 @@ public class ArrayIndexList<E> implements IndexList<E> {
         E[] newList = (E[]) new Object[list.length * 2];
         System.arraycopy(this.list, 0, newList, 0, list.length);
         this.list = newList;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new ElementIterator<>(this);
     }
 }

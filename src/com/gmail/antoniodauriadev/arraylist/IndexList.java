@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.arraylist;
 
-interface IndexList<E> {
+interface IndexList<E> extends Iterable<E>{
 
     /**@return The arraylist's size.*/
     int size();
