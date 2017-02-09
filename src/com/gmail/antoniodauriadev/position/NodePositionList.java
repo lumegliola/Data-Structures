@@ -1,5 +1,7 @@
 package com.gmail.antoniodauriadev.position;
 
+import java.util.Iterator;
+
 public class NodePositionList<E> implements PositionList<E> {
 
     private int size;
@@ -136,5 +138,10 @@ public class NodePositionList<E> implements PositionList<E> {
         } catch (ClassCastException e) {
             throw new InvalidPositionException("The type of position is not valid for this list.");
         }
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new ElementIterator<>(this);
     }
 }

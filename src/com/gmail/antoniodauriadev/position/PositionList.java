@@ -1,6 +1,8 @@
 package com.gmail.antoniodauriadev.position;
 
-interface PositionList<E> {
+import java.util.Iterator;
+
+interface PositionList<E> extends Iterable<E> {
 
     /**@return The position list's size.*/
     int size();
