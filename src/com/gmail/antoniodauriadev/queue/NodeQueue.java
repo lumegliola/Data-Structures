@@ -1,6 +1,7 @@
 package com.gmail.antoniodauriadev.queue;
 
 import com.gmail.antoniodauriadev.node.Node;
+import com.gmail.antoniodauriadev.queue.exceptions.EmptyQueueException;
 
 public class NodeQueue<E> implements Queue<E> {
 

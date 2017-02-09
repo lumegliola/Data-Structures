@@ -15,21 +15,21 @@ interface IndexList<E> extends Iterable<E>{
     /**Adds an element.
      * @param i position.
      * @param element element to add.*/
-    void add(int i, E element) throws IndexOutOfBoundsException;
+    void add(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
 
     /**@return The element in the required position.
      * @param i Position.*/
-    E get(int i) throws IndexOutOfBoundsException;
+    E get(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
 
     /**Removes the element in the required position.
      * @param i Position.
      * @return Removed element.*/
-    E remove(int i) throws IndexOutOfBoundsException;
+    E remove(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
 
     /**Sets an element in the required position.
      * @param i Position.
      * @param element element to set.*
      * @return The previous element in the required position*/
-    E set(int i, E element) throws IndexOutOfBoundsException;
+    E set(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
 
 }

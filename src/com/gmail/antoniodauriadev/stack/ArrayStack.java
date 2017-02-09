@@ -1,5 +1,8 @@
 package com.gmail.antoniodauriadev.stack;
 
+import com.gmail.antoniodauriadev.stack.exceptions.EmptyStackException;
+import com.gmail.antoniodauriadev.stack.exceptions.FullStackException;
+
 public class ArrayStack<E> implements Stack<E> {
     private int capacity;
     private E s[];

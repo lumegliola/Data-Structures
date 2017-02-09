@@ -1,5 +1,7 @@
 package com.gmail.antoniodauriadev.stack;
 
+import com.gmail.antoniodauriadev.stack.exceptions.EmptyStackException;
+
 interface Stack<E> {
 
     /**@return The stack's size*/

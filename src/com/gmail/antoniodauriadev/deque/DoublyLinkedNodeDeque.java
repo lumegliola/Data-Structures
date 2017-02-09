@@ -1,5 +1,6 @@
 package com.gmail.antoniodauriadev.deque;
 
+import com.gmail.antoniodauriadev.deque.exceptions.EmptyDequeException;
 import com.gmail.antoniodauriadev.node.DoublyLinkedNode;
 
 public class DoublyLinkedNodeDeque<E> implements Deque<E> {

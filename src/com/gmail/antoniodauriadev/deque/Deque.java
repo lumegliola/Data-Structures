@@ -1,5 +1,7 @@
 package com.gmail.antoniodauriadev.deque;
 
+import com.gmail.antoniodauriadev.deque.exceptions.EmptyDequeException;
+
 interface Deque<E> {
 
     /**@return The deque's size.*/

@@ -1,5 +1,9 @@
 package com.gmail.antoniodauriadev.position;
 
+import com.gmail.antoniodauriadev.position.exceptions.BoundaryViolationException;
+import com.gmail.antoniodauriadev.position.exceptions.EmptyListException;
+import com.gmail.antoniodauriadev.position.exceptions.InvalidPositionException;
+
 import java.util.Iterator;
 
 public class NodePositionList<E> implements PositionList<E> {

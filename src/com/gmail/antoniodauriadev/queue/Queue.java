@@ -1,5 +1,7 @@
 package com.gmail.antoniodauriadev.queue;
 
+import com.gmail.antoniodauriadev.queue.exceptions.EmptyQueueException;
+
 interface Queue<E> {
 
     /**@return The queue's size*/

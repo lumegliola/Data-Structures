@@ -1,6 +1,7 @@
 package com.gmail.antoniodauriadev.stack;
 
 import com.gmail.antoniodauriadev.node.Node;
+import com.gmail.antoniodauriadev.stack.exceptions.EmptyStackException;
 
 public class NodeStack<E> implements Stack<E> {
 

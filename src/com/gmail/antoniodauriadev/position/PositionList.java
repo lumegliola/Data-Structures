@@ -1,6 +1,8 @@
 package com.gmail.antoniodauriadev.position;
 
-import java.util.Iterator;
+import com.gmail.antoniodauriadev.position.exceptions.BoundaryViolationException;
+import com.gmail.antoniodauriadev.position.exceptions.EmptyListException;
+import com.gmail.antoniodauriadev.position.exceptions.InvalidPositionException;
 
 interface PositionList<E> extends Iterable<E> {
 

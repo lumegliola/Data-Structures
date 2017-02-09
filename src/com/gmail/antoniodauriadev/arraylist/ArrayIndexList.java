@@ -32,9 +32,9 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public void add(int i, E element) throws IndexOutOfBoundsException {
+    public void add(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
         if (i > size() || i < 0)
-            throw new IndexOutOfBoundsException();
+            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
 
         if (size() == this.list.length)
             duplicateCapacity();
@@ -45,17 +45,17 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E get(int i) throws IndexOutOfBoundsException {
+    public E get(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
         if (i >= size() || i < 0)
-            throw new IndexOutOfBoundsException();
+            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
 
         return list[i];
     }
 
     @Override
-    public E remove(int i) throws IndexOutOfBoundsException {
+    public E remove(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
         if (i >= size() || i < 0)
-            throw new IndexOutOfBoundsException();
+            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
 
         E element = list[i];
         System.arraycopy(this.list, i + 1, this.list, i, size() - 1 - i);
@@ -64,9 +64,9 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E set(int i, E element) throws IndexOutOfBoundsException {
+    public E set(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
         if (i >= size() || i < 0)
-            throw new IndexOutOfBoundsException();
+            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
 
         E prevElement = list[i];
         list[i] = element;
