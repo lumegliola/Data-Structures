@@ -5,7 +5,7 @@ import com.gmail.antoniodauriadev.positionlist.exceptions.BoundaryViolationExcep
 import com.gmail.antoniodauriadev.positionlist.exceptions.EmptyListException;
 import com.gmail.antoniodauriadev.positionlist.exceptions.InvalidPositionException;
 
-interface PositionList<E> extends Iterable<E> {
+public interface PositionList<E> extends Iterable<E> {
 
     /**@return The position list's size.*/
     int size();
