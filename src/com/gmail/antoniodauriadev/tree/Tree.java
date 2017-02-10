@@ -7,7 +7,7 @@ import com.gmail.antoniodauriadev.exceptions.tree.EmptyTreeException;
 
 import java.util.Iterator;
 
-interface Tree<E> {
+public interface Tree<E> {
 
     /**@return The tree's size.*/
     int size();
