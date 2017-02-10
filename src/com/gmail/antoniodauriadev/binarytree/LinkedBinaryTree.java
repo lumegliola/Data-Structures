@@ -203,9 +203,30 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         return nodeToRemove.element();
     }
 
+    public void attach(Position<E> leaf, LinkedBinaryTree<E> left, LinkedBinaryTree<E> right) throws InvalidPositionException {
+        if(isExternal(leaf)) {
+            BinaryTreePosition<E> checkedleaf = checkPosition(leaf);
+
+            if (left != null) {
+                if (!left.isEmpty()) {
+                    checkPosition(left.root()).setParent(checkedleaf);
+                    checkedleaf.setLeft(checkPosition(left.root()));
+                }
+            }
+
+            if (right != null) {
+                if (!right.isEmpty()) {
+                    checkPosition(right.root()).setParent(checkedleaf);
+                    checkedleaf.setRight(checkPosition(right.root()));
+                }
+            }
+        }
+        else throw new InvalidPositionException("The chosen node isn't a leaf.");
+    }
+
     private BinaryTreePosition<E> checkPosition(Position<E> v) throws InvalidPositionException {
         if (v == null || !(v instanceof BinaryTreePosition))
-            throw new InvalidPositionException("The position is invalid");
+            throw new InvalidPositionException("The position is invalid.");
         return (BinaryTreePosition<E>) v;
     }
 
