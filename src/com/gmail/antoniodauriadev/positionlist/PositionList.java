@@ -1,9 +1,9 @@
 package com.gmail.antoniodauriadev.positionlist;
 
 import com.gmail.antoniodauriadev.position.Position;
-import com.gmail.antoniodauriadev.positionlist.exceptions.BoundaryViolationException;
-import com.gmail.antoniodauriadev.positionlist.exceptions.EmptyListException;
-import com.gmail.antoniodauriadev.positionlist.exceptions.InvalidPositionException;
+import com.gmail.antoniodauriadev.exceptions.BoundaryViolationException;
+import com.gmail.antoniodauriadev.exceptions.positionlist.EmptyListException;
+import com.gmail.antoniodauriadev.exceptions.InvalidPositionException;
 
 public interface PositionList<E> extends Iterable<E> {
 

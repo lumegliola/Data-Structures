@@ -1,5 +1,7 @@
 package com.gmail.antoniodauriadev.arraylist;
 
+import com.gmail.antoniodauriadev.exceptions.arraylist.IndexOutOfBoundsException;
+
 interface IndexList<E> extends Iterable<E>{
 
     /**@return The arraylist's size.*/
@@ -15,21 +17,21 @@ interface IndexList<E> extends Iterable<E>{
     /**Adds an element.
      * @param i position.
      * @param element element to add.*/
-    void add(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
+    void add(int i, E element) throws IndexOutOfBoundsException;
 
     /**@return The element in the required position.
      * @param i Position.*/
-    E get(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
+    E get(int i) throws IndexOutOfBoundsException;
 
     /**Removes the element in the required position.
      * @param i Position.
      * @return Removed element.*/
-    E remove(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
+    E remove(int i) throws IndexOutOfBoundsException;
 
     /**Sets an element in the required position.
      * @param i Position.
      * @param element element to set.*
      * @return The previous element in the required position*/
-    E set(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException;
+    E set(int i, E element) throws IndexOutOfBoundsException;
 
 }

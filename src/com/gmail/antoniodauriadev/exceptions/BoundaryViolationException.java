@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.tree.exceptions;
+package com.gmail.antoniodauriadev.exceptions;
 
 public class BoundaryViolationException extends RuntimeException {
 

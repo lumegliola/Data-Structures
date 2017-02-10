@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.queue;
 
-import com.gmail.antoniodauriadev.queue.exceptions.EmptyQueueException;
+import com.gmail.antoniodauriadev.exceptions.queue.EmptyQueueException;
 
 interface Queue<E> {
 

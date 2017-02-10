@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.position;
 
-import com.gmail.antoniodauriadev.positionlist.exceptions.InvalidPositionException;
+import com.gmail.antoniodauriadev.exceptions.InvalidPositionException;
 
 public class PositionDoublyLinkedNode<E> implements Position<E> {
 

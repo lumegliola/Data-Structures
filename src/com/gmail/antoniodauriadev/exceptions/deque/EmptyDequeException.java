@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.deque.exceptions;
+package com.gmail.antoniodauriadev.exceptions.deque;
 
 public class EmptyDequeException extends RuntimeException {
 

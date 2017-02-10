@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.deque;
 
-import com.gmail.antoniodauriadev.deque.exceptions.EmptyDequeException;
+import com.gmail.antoniodauriadev.exceptions.deque.EmptyDequeException;
 
 interface Deque<E> {
 

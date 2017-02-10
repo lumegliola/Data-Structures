@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.stack.exceptions;
+package com.gmail.antoniodauriadev.exceptions.stack;
 
 public class FullStackException extends RuntimeException {
 

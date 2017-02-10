@@ -1,6 +1,6 @@
 package com.gmail.antoniodauriadev.stack;
 
-import com.gmail.antoniodauriadev.stack.exceptions.EmptyStackException;
+import com.gmail.antoniodauriadev.exceptions.stack.EmptyStackException;
 
 interface Stack<E> {
 

@@ -3,10 +3,10 @@ package com.gmail.antoniodauriadev.tree;
 import com.gmail.antoniodauriadev.position.Position;
 import com.gmail.antoniodauriadev.positionlist.NodePositionList;
 import com.gmail.antoniodauriadev.positionlist.PositionList;
-import com.gmail.antoniodauriadev.tree.exceptions.BoundaryViolationException;
-import com.gmail.antoniodauriadev.tree.exceptions.EmptyTreeException;
-import com.gmail.antoniodauriadev.tree.exceptions.InvalidPositionException;
-import com.gmail.antoniodauriadev.tree.exceptions.NonEmptyTreeException;
+import com.gmail.antoniodauriadev.exceptions.BoundaryViolationException;
+import com.gmail.antoniodauriadev.exceptions.InvalidPositionException;
+import com.gmail.antoniodauriadev.exceptions.tree.EmptyTreeException;
+import com.gmail.antoniodauriadev.exceptions.tree.NonEmptyTreeException;
 
 import java.util.Iterator;
 

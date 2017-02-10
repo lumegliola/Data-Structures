@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.arraylist.exceptions;
+package com.gmail.antoniodauriadev.exceptions.arraylist;
 
 public class IndexOutOfBoundsException extends RuntimeException{
 

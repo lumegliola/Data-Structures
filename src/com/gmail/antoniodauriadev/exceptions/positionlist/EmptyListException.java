@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.positionlist.exceptions;
+package com.gmail.antoniodauriadev.exceptions.positionlist;
 
 public class EmptyListException extends RuntimeException {
 

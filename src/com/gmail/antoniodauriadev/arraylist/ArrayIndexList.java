@@ -1,5 +1,7 @@
 package com.gmail.antoniodauriadev.arraylist;
 
+import com.gmail.antoniodauriadev.exceptions.arraylist.IndexOutOfBoundsException;
+
 import java.util.Iterator;
 
 public class ArrayIndexList<E> implements IndexList<E> {
@@ -32,9 +34,9 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public void add(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
+    public void add(int i, E element) throws IndexOutOfBoundsException {
         if (i > size() || i < 0)
-            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException();
 
         if (size() == this.list.length)
             duplicateCapacity();
@@ -45,17 +47,17 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E get(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
+    public E get(int i) throws IndexOutOfBoundsException {
         if (i >= size() || i < 0)
-            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException();
 
         return list[i];
     }
 
     @Override
-    public E remove(int i) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
+    public E remove(int i) throws IndexOutOfBoundsException {
         if (i >= size() || i < 0)
-            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException();
 
         E element = list[i];
         System.arraycopy(this.list, i + 1, this.list, i, size() - 1 - i);
@@ -64,9 +66,9 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E set(int i, E element) throws com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException {
+    public E set(int i, E element) throws IndexOutOfBoundsException {
         if (i >= size() || i < 0)
-            throw new com.gmail.antoniodauriadev.arraylist.exceptions.IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException();
 
         E prevElement = list[i];
         list[i] = element;

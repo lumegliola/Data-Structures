@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.queue.exceptions;
+package com.gmail.antoniodauriadev.exceptions.queue;
 
 public class EmptyQueueException extends RuntimeException {
 

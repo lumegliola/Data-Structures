@@ -1,7 +1,7 @@
 package com.gmail.antoniodauriadev.queue;
 
-import com.gmail.antoniodauriadev.queue.exceptions.EmptyQueueException;
-import com.gmail.antoniodauriadev.queue.exceptions.FullQueueException;
+import com.gmail.antoniodauriadev.exceptions.queue.EmptyQueueException;
+import com.gmail.antoniodauriadev.exceptions.queue.FullQueueException;
 
 public class ArrayQueue<E> implements Queue<E> {
 

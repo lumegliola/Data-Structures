@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.tree.exceptions;
+package com.gmail.antoniodauriadev.exceptions.tree;
 
 public class EmptyTreeException extends RuntimeException {
 
