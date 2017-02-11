@@ -65,4 +65,6 @@ public interface PositionList<E> extends Iterable<E> {
      * @return the old elment in that position..*/
     E set(Position<E> p, E e) throws InvalidPositionException;
 
+    /**Creates a position's list.*/
+     Iterable<Position<E>> positions();
 }

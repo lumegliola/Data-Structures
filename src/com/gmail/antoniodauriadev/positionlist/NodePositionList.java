@@ -122,6 +122,21 @@ public class NodePositionList<E> implements PositionList<E> {
         return prevElement;
     }
 
+    @Override
+    public Iterable<Position<E>> positions() {
+        PositionList<Position<E>> P = new NodePositionList<>();
+        if (!isEmpty()) {
+            Position<E> p = first();
+            while (true) {
+                P.addLast(p); // add position p as the last element of list P
+                if (p == last())
+                    break;
+                p = next(p);
+            }
+        }
+        return P; // return P as our Iterable object
+    }
+
     /**Checks the position and cast it to PositionDoublyLinkedNode*/
     private PositionDoublyLinkedNode<E> checkPosition(Position<E> p) throws InvalidPositionException {
 
