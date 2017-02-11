@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.exceptions.priorityqueue;
+package com.gmail.antoniodauriadev.exceptions;
 
 public class InvalidKeyException extends RuntimeException {
 

@@ -1,7 +1,7 @@
 package com.gmail.antoniodauriadev.proirityqueue;
 
 import com.gmail.antoniodauriadev.exceptions.priorityqueue.EmptyPriorityQueueException;
-import com.gmail.antoniodauriadev.exceptions.priorityqueue.InvalidKeyException;
+import com.gmail.antoniodauriadev.exceptions.InvalidKeyException;
 
 public interface PriorityQueue<K, V> {
 
