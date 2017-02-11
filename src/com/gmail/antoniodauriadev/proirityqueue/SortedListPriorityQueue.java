@@ -13,22 +13,15 @@ public class SortedListPriorityQueue<K, V> implements PriorityQueue<K, V> {
     private PositionList<Entry<K,V>> entries;
     private Comparator<K> comparator;
 
-    /** Crea la coda a priorita` con il comparatore di default. */
+    /**Creates the priority queue with default comparator.*/
     public SortedListPriorityQueue () {
         entries = new NodePositionList<>();
         comparator = new DefaultComparator<>();
     }
 
-    /** Crea la coda a priorita` con un dato comparatore. */
+    /**Creates the priority queue with chosen comparator.*/
     public SortedListPriorityQueue (Comparator<K> comp) {
         entries = new NodePositionList<>();
-        comparator = comp;
-    }
-
-    /** Crea la coda a priorita` con un dato comparatore e una data lista.
-     * Si assume che gli elementi della lista siano in ordine non decrescente.*/
-    public SortedListPriorityQueue (PositionList<Entry<K,V>> list, Comparator<K> comp) {
-        entries = list;
         comparator = comp;
     }
 
