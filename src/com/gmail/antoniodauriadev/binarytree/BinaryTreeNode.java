@@ -1,12 +1,12 @@
 package com.gmail.antoniodauriadev.binarytree;
 
-public class BinaryTreeNode<E> implements BinaryTreePosition<E> {
+class BinaryTreeNode<E> implements BinaryTreePosition<E> {
 
     private E element;
     private BinaryTreePosition<E> left, right, parent;
 
 
-    public BinaryTreeNode(E element, BinaryTreePosition<E> left, BinaryTreePosition<E> right, BinaryTreePosition<E> parent) {
+    BinaryTreeNode(E element, BinaryTreePosition<E> left, BinaryTreePosition<E> right, BinaryTreePosition<E> parent) {
         this.element = element;
         this.left = left;
         this.right = right;

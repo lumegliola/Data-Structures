@@ -124,7 +124,7 @@ public class HeapPriorityQueue<K, V> implements PriorityQueue<K, V> {
         private K key;
         private V value;
 
-        public MyEntry(K key, V value) { this.key = key; this.value = value; }
+        private MyEntry(K key, V value) { this.key = key; this.value = value; }
 
         public K getKey() { return this.key; }
 

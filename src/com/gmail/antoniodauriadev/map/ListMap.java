@@ -140,7 +140,7 @@ public class ListMap<K, V> implements Map<K, V> {
             return this.value;
         }
 
-        public V setValue(V value) {
+        private V setValue(V value) {
             V oldValue = getValue();
             this.value = value;
             return oldValue;

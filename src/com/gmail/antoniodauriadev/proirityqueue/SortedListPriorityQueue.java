@@ -94,7 +94,7 @@ public class SortedListPriorityQueue<K, V> implements PriorityQueue<K, V> {
         private K key;
         private V value;
 
-        public MyEntry(K key, V value) {
+        MyEntry(K key, V value) {
             this.key = key;
             this.value = value;
         }
