@@ -1,7 +1,7 @@
 package com.gmail.antoniodauriadev.map;
 
-import com.gmail.antoniodauriadev.exceptions.InvalidKeyException;
-import com.gmail.antoniodauriadev.proirityqueue.Entry;
+import com.gmail.antoniodauriadev.exceptions.entry.InvalidKeyException;
+import com.gmail.antoniodauriadev.entry.Entry;
 
 public interface Map<K, V> {
 
