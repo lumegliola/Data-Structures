@@ -1,9 +1,9 @@
-package com.gmail.antoniodauriadev.exceptions;
+package com.gmail.antoniodauriadev.exceptions.entry;
 
 public class InvalidKeyException extends RuntimeException {
 
     public InvalidKeyException() {
-        super("The chosen position is invalid.");
+        super("The key is invalid.");
     }
 
     public InvalidKeyException(String error) {

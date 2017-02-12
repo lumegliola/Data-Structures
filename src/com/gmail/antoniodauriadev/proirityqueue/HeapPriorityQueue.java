@@ -2,8 +2,9 @@ package com.gmail.antoniodauriadev.proirityqueue;
 
 import com.gmail.antoniodauriadev.completebinarytree.ArrayListCompleteBinaryTree;
 import com.gmail.antoniodauriadev.completebinarytree.CompleteBinaryTree;
+import com.gmail.antoniodauriadev.entry.Entry;
 import com.gmail.antoniodauriadev.exceptions.priorityqueue.EmptyPriorityQueueException;
-import com.gmail.antoniodauriadev.exceptions.InvalidKeyException;
+import com.gmail.antoniodauriadev.exceptions.entry.InvalidKeyException;
 import com.gmail.antoniodauriadev.position.Position;
 
 import java.util.Comparator;

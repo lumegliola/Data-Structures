@@ -1,4 +1,4 @@
-package com.gmail.antoniodauriadev.proirityqueue;
+package com.gmail.antoniodauriadev.entry;
 
 public interface Entry<K,V> {
 
