@@ -1,5 +1,6 @@
 package com.gmail.antoniodauriadev.arraylist;
 
+import com.gmail.antoniodauriadev.exceptions.arraylist.ElementNotFoundException;
 import com.gmail.antoniodauriadev.exceptions.arraylist.IndexOutOfBoundsException;
 
 interface IndexList<E> extends Iterable<E>{
@@ -27,6 +28,11 @@ interface IndexList<E> extends Iterable<E>{
      * @param i Position.
      * @return Removed element.*/
     E remove(int i) throws IndexOutOfBoundsException;
+
+    /**Removes the required element.
+     * @param element Element to remove.
+     * @return Removed element.*/
+    E remove(E element) throws ElementNotFoundException, IndexOutOfBoundsException;
 
     /**Sets an element in the required position.
      * @param i Position.

@@ -1,5 +1,6 @@
 package com.gmail.antoniodauriadev.arraylist;
 
+import com.gmail.antoniodauriadev.exceptions.arraylist.ElementNotFoundException;
 import com.gmail.antoniodauriadev.exceptions.arraylist.IndexOutOfBoundsException;
 
 import java.util.Iterator;
@@ -63,6 +64,19 @@ public class ArrayIndexList<E> implements IndexList<E> {
         System.arraycopy(this.list, i + 1, this.list, i, size() - 1 - i);
         this.size--;
         return element;
+    }
+
+    @Override
+    public E remove(E element) throws ElementNotFoundException, IndexOutOfBoundsException {
+        int i = 0;
+        for (E e : this) {
+            if (e == element) {
+                remove(i);
+                return e;
+            }
+        i++;
+        }
+        throw new ElementNotFoundException();
     }
 
     @Override
