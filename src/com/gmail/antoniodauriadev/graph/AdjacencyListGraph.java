@@ -11,27 +11,27 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
     private NodePositionList<Vertex<V>> vertices;
     private NodePositionList<Edge<E>> edges;
 
-//
+
     @Override
     public int numVertices() {
         return this.vertices.size();
     }
-//
+
     @Override
     public int numEdges() {
         return this.edges.size();
     }
-//
+
     @Override
     public Iterable<Vertex<V>> vertices() {
         return this.vertices;
     }
-//
+
     @Override
     public Iterable<Edge<E>> edges() {
         return this.edges;
     }
-//
+
     @Override
     public V replace(Vertex<V> vertex, V element) throws InvalidPositionException {
         MyVertex<V> checkedVertex = checkVertex(vertex);
@@ -39,7 +39,7 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
         checkedVertex.setElement(element);
         return prevElement;
     }
-//
+
     @Override
     public E replace(Edge<E> edge, E element) throws InvalidPositionException {
         MyEdge<E> checkedEdge = checkEdge(edge);
@@ -47,17 +47,17 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
         checkedEdge.setElement(element);
         return prevElement;
     }
-//
+
     @Override
     public Iterable<Edge<E>> incidentEdges(Vertex<V> vertex) throws InvalidPositionException {
         return checkVertex(vertex).incidentEdges();
     }
-//
+
     @Override
     public Vertex[] endVertices(Edge<E> edge) throws InvalidPositionException {
         return checkEdge(edge).endVertices();
     }
-//
+
     @Override
     public Vertex<V> opposite(Vertex<V> vertex, Edge<E> edge) throws InvalidPositionException {
         checkVertex(vertex);
@@ -73,27 +73,63 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
 
     @Override
     public boolean areAdjacent(Vertex<V> vertexA, Vertex<V> vertexB) throws InvalidPositionException {
+        Iterable<Edge<E>> iterToSearch;
+        if(degree(vertexA) < degree(vertexB))
+            iterToSearch = incidentEdges(vertexA);
+        else
+            iterToSearch = incidentEdges(vertexB);
+        for (Edge<E> e: iterToSearch){
+            Vertex<V>[] endV = endVertices(e);
+            if ((endV[0]==vertexA && endV[1]==vertexB) || (endV[0])==vertexB && endV[1]==vertexA)
+                return true;
+        }
         return false;
     }
 
     @Override
     public Vertex<V> insertVertex(V element) {
-        return null;
+        MyVertex<V> toInsert =  new MyVertex<>(element);
+        this.vertices.addLast(toInsert);
+        Position<Vertex<V>> p = this.vertices.last();
+        toInsert.setLocation(p);
+        return toInsert;
     }
 
     @Override
     public Edge<E> insertEdge(Vertex<V> vertexA, Vertex<V> vertexB, E element) throws InvalidPositionException {
-        return null;
+        MyVertex<V> checkedVertexA = checkVertex(vertexA);
+        MyVertex<V> checkedVertexB = checkVertex(vertexB);
+        MyEdge<E> toInsert = new MyEdge<>(vertexA, vertexB, element);
+        Position<Edge<E>> pVertexA = checkedVertexA.insertIncidence(toInsert);
+        Position<Edge<E>> pVertexB = checkedVertexB.insertIncidence(toInsert);
+        toInsert.setIncidences(pVertexA, pVertexB);
+        this.edges.addLast(toInsert);
+        Position<Edge<E>> pe = this.edges.last();
+        toInsert.setLocation(pe);
+        return toInsert;
     }
 
     @Override
     public V removeVertex(Vertex<V> vertex) throws InvalidPositionException {
-        return null;
+        MyVertex<V> vv = checkVertex(vertex);
+        Iterable<Edge<E>> iterToSearch = incidentEdges(vertex);
+        for (Edge<E> e : iterToSearch)
+            if (((MyEdge<E>)e).location() != null) // if the edge has not been marked invalid
+                removeEdge(e);
+        this.vertices.remove(vv.location());
+        return vertex.element();
     }
 
     @Override
     public E removeEdge(Edge<E> edge) throws InvalidPositionException {
-        return null;
+        MyEdge<E> checkedEdge = checkEdge(edge);
+        MyVertex<V>[] endVertices = checkedEdge.endVertices();
+        Position<Edge<E>>[] inc = checkedEdge.incidences();
+        endVertices[0].removeIncidence(inc[0]);
+        endVertices[1].removeIncidence(inc[1]);
+        edges.remove(checkedEdge.location());
+        checkedEdge.setLocation(null);	// invalidating this edge
+        return edge.element();
     }
 
     private MyVertex<V> checkVertex(Vertex<V> vertex) {
@@ -108,6 +144,11 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
         } else throw new InvalidPositionException("The given edge is invalid.");
     }
 
+    private int degree(Vertex<V> vertex) throws InvalidPositionException {
+        MyVertex<V> checkedVertex = checkVertex(vertex);
+        return checkedVertex.degree();
+    }
+
     /**Implementation of a decorable position by means of a hash table.*/
     private static class MyPosition<T> extends HashTableMap<Object,Object> implements DecorablePosition<T> {
         private T element;
@@ -116,8 +157,9 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
         public T element() {
             return this.element;
         }
+
         /** Sets the element stored at this position.*/
-        public void setElement(T element) {
+        void setElement(T element) {
             this.element = element;
         }
     }
@@ -138,33 +180,40 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             setElement(o);
             incEdges = new NodePositionList<>();
         }
+
         /** Return the degree of a given vertex */
-        public int degree() {
+        int degree() {
             return incEdges.size();
         }
+
         /** Returns the incident edges on this vertex. */
-        public Iterable<Edge<E>> incidentEdges() {
+        Iterable<Edge<E>> incidentEdges() {
             return incEdges;
         }
+
         /** Inserts an edge into the incidence container of this vertex. */
-        public Position<Edge<E>> insertIncidence(Edge<E> e) {
+        Position<Edge<E>> insertIncidence(Edge<E> e) {
             incEdges.addLast(e);
             return incEdges.last();
         }
+
         /** Removes an edge from the incidence container of this vertex. */
-        public void removeIncidence(Position<Edge<E>> p) {
+        void removeIncidence(Position<Edge<E>> p) {
             incEdges.remove(p);
         }
+
         /** Returns the position of this vertex in the vertex container of
          * the graph. */
-        public Position<Vertex<V>> location() {
+        Position<Vertex<V>> location() {
             return loc;
         }
+
         /** Sets the position of this vertex in the vertex container of
          * the graph. */
-        public void setLocation(Position<Vertex<V>> p) {
+        void setLocation(Position<Vertex<V>> p) {
             loc = p;
         }
+
         /** Returns a string representation of the element stored at this
          * vertex. */
         public String toString() {
@@ -176,13 +225,15 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
      * graph.  Each edge stores its endpoints (end vertices), its
      * positions within the incidence containers of its endpoints, and
      * position in the edge container of the graph.*/
-    protected class MyEdge<E> extends MyPosition<E> implements Edge<E> {
+    private class MyEdge<E> extends MyPosition<E> implements Edge<E> {
 
         /** The end vertices of the edge. */
         private MyVertex<V>[] endVertices;
+
         /** The positions of the entries for the edge in the incidence
          * containers of the end vertices. */
         private Position<Edge<E>>[] Inc;
+
         /** The position of the edge in the edge container of the
          * graph. */
         private Position<Edge<E>> loc;
@@ -195,33 +246,39 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             endVertices[1] = (MyVertex<V>)w;
             Inc = (Position<Edge<E>>[]) new Position[2];
         }
+
         /** Returns the end vertices of the edge. There are always two
          * elements in the returned array. */
-        public MyVertex<V>[] endVertices() {
+        MyVertex<V>[] endVertices() {
             return endVertices;
         }
+
         /** Returns the positions of the edge in the incidence containers
          * of its end vertices.  The returned array always contains two
          * elements. */
-        public Position<Edge<E>>[] incidences() {
+        Position<Edge<E>>[] incidences() {
             return Inc;
         }
+
         /** Sets the positions of the edge in the incidence containers of
          * its end vertices. */
-        public void setIncidences(Position<Edge<E>> pv, Position<Edge<E>> pw) {
+        void setIncidences(Position<Edge<E>> pv, Position<Edge<E>> pw) {
             Inc[0] = pv;
             Inc[1] = pw;
         }
+
         /** Returns the position of the edge in the edge container of the
          * graph. */
-        public Position<Edge<E>> location() {
+        Position<Edge<E>> location() {
             return loc;
         }
+
         /** Sets the position of the edge in the edge container of the
          * graph. */
-        public void setLocation(Position<Edge<E>> p) {
+        void setLocation(Position<Edge<E>> p) {
             loc = p;
         }
+
         /** Returns a string representation of the edge via a tuple of
          * vertices. */
         public String toString() {
