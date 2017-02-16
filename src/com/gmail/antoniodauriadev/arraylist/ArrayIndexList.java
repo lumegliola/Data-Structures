@@ -74,7 +74,7 @@ public class ArrayIndexList<E> implements IndexList<E> {
                 remove(i);
                 return e;
             }
-        i++;
+            i++;
         }
         throw new ElementNotFoundException();
     }
@@ -98,5 +98,20 @@ public class ArrayIndexList<E> implements IndexList<E> {
     @Override
     public Iterator<E> iterator() {
         return new ElementIterator<>(this);
+    }
+
+    @Override
+    public String toString() {
+        String s = "ArrayIndexList: (";
+        boolean first = true;
+        for(E e : this) {
+            if (first) {
+                first = false;
+                s = s + e.toString();
+            }
+            else
+                s = s + ", " + e.toString();
+        }
+        return s + ")";
     }
 }

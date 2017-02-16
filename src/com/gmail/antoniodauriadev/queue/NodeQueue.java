@@ -59,4 +59,20 @@ public class NodeQueue<E> implements Queue<E> {
             this.tail = null;
         return tmp;
     }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "Queue is empty.";
+        }
+
+        String s = "queue: (";
+        Node<E> n = head;
+        while (n != tail) {
+            s = s + n.getElement() + ", ";
+            n = n.getNext();
+        }
+        s = s + n.getElement() + ")";
+        return s;
+    }
 }
