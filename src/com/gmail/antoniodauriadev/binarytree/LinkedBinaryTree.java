@@ -148,7 +148,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         if (leftPos != null)
             throw new InvalidPositionException("The node already had a left child.");
 
-        BinaryTreePosition<E> toAdd = new BinaryTreeNode<>(element, checkedPosition, null, null);
+        BinaryTreePosition<E> toAdd = new BinaryTreeNode<>(element, null, null, checkedPosition);
         checkedPosition.setLeft(toAdd);
         size++;
         return toAdd;
@@ -161,7 +161,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         if (rightPos != null)
             throw new InvalidPositionException("The node already had a right child.");
 
-        BinaryTreePosition<E> toAdd = new BinaryTreeNode<>(element, checkedPosition, null, null);
+        BinaryTreePosition<E> toAdd = new BinaryTreeNode<>(element, null, null, checkedPosition);
         checkedPosition.setRight(toAdd);
         size++;
         return toAdd;
