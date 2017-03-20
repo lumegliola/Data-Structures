@@ -6,7 +6,7 @@ import com.gmail.antoniodauriadev.exceptions.entry.InvalidKeyException;
 
 public interface Dictionary<K, V> {
 
-    /**@return The Dictionary's size.*/
+    /**@return Size of the Dictionary.*/
     int size();
 
     /**@return True if the dictionary is empty.*/
@@ -24,7 +24,7 @@ public interface Dictionary<K, V> {
     Entry<K,V> insert(K key, V value) throws InvalidKeyException;
 
     /**Removes the given entry from the dictionary.
-     * @return The removed entry.*/
+     * @return Removed entry.*/
     Entry<K,V> remove(Entry<K,V> entry) throws InvalidEntryException;
 
     /**@return An iterator containing all the entries in the dictionary.*/

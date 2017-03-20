@@ -7,10 +7,10 @@ import com.gmail.antoniodauriadev.tree.Tree;
 
 public interface BinaryTree<E> extends Tree<E> {
 
-    /**@return The node's left child.*/
+    /**@return Left child.*/
     Position<E> left(Position<E> position) throws InvalidPositionException, BoundaryViolationException;
 
-    /**@return The node's right child.*/
+    /**@return Right child.*/
     Position<E> right(Position<E> position) throws InvalidPositionException, BoundaryViolationException;
 
     /**@return True if the chosen node has a left child.*/

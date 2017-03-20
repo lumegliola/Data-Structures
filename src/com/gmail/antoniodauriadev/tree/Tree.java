@@ -9,34 +9,34 @@ import java.util.Iterator;
 
 public interface Tree<E> {
 
-    /**@return The tree's size.*/
+    /**@return Size of the tree.*/
     int size();
 
     /**@return True if the tree is empty.*/
     boolean isEmpty();
 
-    /**@return Tree's elements iterator.*/
+    /**@return Elements iterator of the tree.*/
     Iterator<E> iterator();
 
-    /**@return a nodes' iterable collection.*/
+    /**@return an iterable collection of the nodes.*/
     Iterable<Position<E>> positions();
 
-    /**Overwrite the element in the chosed node.
+    /**Overwrite the element in the chosen node.
      * @throws InvalidPositionException If the position is invalid.
-     * @return The previous element. */
+     * @return Previous element. */
     E replace(Position<E> node, E element) throws InvalidPositionException;
 
     /**@throws EmptyTreeException If the tree is empty.
-     * @return The tree's root.*/
+     * @return Root of the tree.*/
     Position<E> root() throws EmptyTreeException;
 
     /**@throws InvalidPositionException If the position is invalid.
      * @throws BoundaryViolationException If the boundary will be violated.
-     * @return The node's father.*/
+     * @return Parent of the node.*/
     Position<E> parent(Position<E> node) throws InvalidPositionException, BoundaryViolationException;
 
     /**@throws InvalidPositionException If the position is invalid.
-     * @return Iterable collection of node's children.*/
+     * @return Iterable collection of the children of the node.*/
     Iterable<Position<E>> children(Position<E> node) throws InvalidPositionException;
 
     /**@throws InvalidPositionException If the position is invalid.
@@ -48,6 +48,6 @@ public interface Tree<E> {
     boolean isExternal(Position<E> node) throws InvalidPositionException;
 
     /**@throws InvalidPositionException If the position is invalid.
-     * @return true if the chesen node is the root node.*/
+     * @return true if the chosen node is the root node.*/
     boolean isRoot(Position<E> node) throws InvalidPositionException;
 }

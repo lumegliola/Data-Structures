@@ -17,13 +17,13 @@ class CompleteBinaryTreeNode<E> implements Position<E>{
         return this.element;
     }
 
-    /**@return The position's index.*/
+    /**@return Position index.*/
     public int index() {
         return this.index;
     }
 
     /**Sets a new element in this node.
-     * @return The previous element.*/
+     * @return Previous element.*/
     public E setElement(E element) {
         E temp = element();
         this.element = element;

@@ -4,22 +4,22 @@ import com.gmail.antoniodauriadev.position.Position;
 
 interface BinaryTreePosition<E> extends Position<E> {
 
-    /**Stets the element.*/
+    /**Sets the element.*/
     void setElement(E element);
 
-    /**@return The left child.*/
+    /**@return Left child.*/
     BinaryTreePosition<E> getLeft();
 
     /**Sets the left child.*/
     void setLeft(BinaryTreePosition<E> position);
 
-    /**@return The right child.*/
+    /**@return Right child.*/
     BinaryTreePosition<E> getRight();
 
     /**Sets the right child.*/
     void setRight(BinaryTreePosition<E> position);
 
-    /**@return The parent.*/
+    /**@return Parent.*/
     BinaryTreePosition<E> getParent();
 
     /**Sets the parent.*/

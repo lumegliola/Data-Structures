@@ -4,21 +4,21 @@ import com.gmail.antoniodauriadev.exceptions.stack.EmptyStackException;
 
 interface Stack<E> {
 
-    /**@return The stack's size*/
+    /**@return Size of the stack*/
     int size();
 
     /**@return True if the stack is empty*/
     boolean isEmpty();
 
-    /**Removes the first element on the stack's top
-     * @return the first element on the stack's top*/
+    /**Removes the first element on the top
+     * @return Removed element*/
     E pop() throws EmptyStackException;
 
-    /**Adds an element on the stack's top
-     * @param element element to add*/
+    /**Adds an element on the top
+     * @param element Element to add*/
     void push(E element);
 
-    /**@return The last element on the stack's top*/
+    /**@return Last added element.*/
     E top() throws EmptyStackException;
 
 }

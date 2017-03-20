@@ -94,7 +94,7 @@ public class ListMap<K, V> implements Map<K, V> {
     }
 
     /**Removes an entry by the key.
-     * @return The removed entry if it found the same key, null otherwise.*/
+     * @return Removed entry if it found the same key, null otherwise.*/
     private Entry<K, V> removeEntryByKey(K key) throws InvalidKeyException {
         checkKey(key);
         for (int i = 0; i < this.list.size()-1; i++) {

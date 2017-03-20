@@ -7,30 +7,30 @@ import com.gmail.antoniodauriadev.exceptions.InvalidPositionException;
 
 public interface PositionList<E> extends Iterable<E> {
 
-    /**@return The position list's size.*/
+    /**@return Size of the position list.*/
     int size();
 
     /**@return True if the position list is empty.*/
     boolean isEmpty();
 
     /**@throws EmptyListException If the list is empty.
-     * @return The first element's position.*/
+     * @return Position of the first element.*/
     Position<E> first() throws EmptyListException;
 
     /**@throws EmptyListException If the list is empty.
-     * @return The last element's position.*/
+     * @return Position of the last element.*/
     Position<E> last() throws EmptyListException;
 
     /**@throws InvalidPositionException If the position is not in the list.
      * @throws BoundaryViolationException If the Boundary is violated.
      * @param p Position.
-     * @return The next Position after the chosen.*/
+     * @return Next Position after the chosen.*/
     Position<E> next(Position<E> p) throws InvalidPositionException, BoundaryViolationException;
 
     /**@throws InvalidPositionException If the position is not in the list.
      * @throws BoundaryViolationException If the Boundary is violated.
      * @param p Position.
-     * @return The previous Position before the chosen.*/
+     * @return previous Position before the chosen.*/
     Position<E> prev(Position<E> p) throws InvalidPositionException, BoundaryViolationException;
 
     /**Adds an element in the first position.
@@ -56,15 +56,15 @@ public interface PositionList<E> extends Iterable<E> {
     /**Removes the element in the chosen position.
      * @throws InvalidPositionException If the position is not in the list.
      * @param p Position.
-     * @return Removed elment.*/
+     * @return Removed element.*/
     E remove(Position<E> p) throws InvalidPositionException;
 
     /**Overwrites the element in the chosen position.
      * @throws InvalidPositionException If the position is not in the list.
      * @param p Position.
-     * @return the old elment in that position..*/
+     * @return Old element in that position.*/
     E set(Position<E> p, E e) throws InvalidPositionException;
 
-    /**Creates a position's list.*/
+    /**@return An iterable collection of the positions,*/
      Iterable<Position<E>> positions();
 }

@@ -2,7 +2,7 @@ package com.gmail.antoniodauriadev.position;
 
 public interface Position<E> {
 
-    /**@return The element in this position.*/
+    /**@return Element in this position.*/
     E element();
 
 }

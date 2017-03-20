@@ -135,13 +135,13 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
     private MyVertex<V> checkVertex(Vertex<V> vertex) {
         if (vertex instanceof MyVertex) {
             return (MyVertex<V>) vertex;
-        } else throw new InvalidPositionException("The given vertex is invalid.");
+        } else throw new InvalidPositionException("Given vertex is invalid.");
     }
 
     private MyEdge<E> checkEdge(Edge<E> edge) {
         if (edge instanceof MyEdge) {
             return (MyEdge<E>) edge;
-        } else throw new InvalidPositionException("The given edge is invalid.");
+        } else throw new InvalidPositionException("Given edge is invalid.");
     }
 
     private int degree(Vertex<V> vertex) throws InvalidPositionException {
@@ -153,7 +153,7 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
     private static class MyPosition<T> extends HashTableMap<Object,Object> implements DecorablePosition<T> {
         private T element;
 
-        /**@return The element stored at this position.*/
+        /**@return Element stored at this position.*/
         public T element() {
             return this.element;
         }
@@ -181,12 +181,12 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             incEdges = new NodePositionList<>();
         }
 
-        /** Return the degree of a given vertex */
+        /** @Return Degree of a given vertex */
         int degree() {
             return incEdges.size();
         }
 
-        /** Returns the incident edges on this vertex. */
+        /** @Return Incident edges on this vertex. */
         Iterable<Edge<E>> incidentEdges() {
             return incEdges;
         }
@@ -202,7 +202,7 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             incEdges.remove(p);
         }
 
-        /** Returns the position of this vertex in the vertex container of
+        /** @Return Position of this vertex in the vertex container of
          * the graph. */
         Position<Vertex<V>> location() {
             return loc;
@@ -214,27 +214,27 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             loc = p;
         }
 
-        /** Returns a string representation of the element stored at this
+        /** @Return A string representation of the element stored at this
          * vertex. */
         public String toString() {
             return element().toString();
         }
     }
 
-    /**Implementation of an edge for an undirected adjacency list
+    /** Implementation of an edge for an undirected adjacency list
      * graph.  Each edge stores its endpoints (end vertices), its
      * positions within the incidence containers of its endpoints, and
      * position in the edge container of the graph.*/
     private class MyEdge<E> extends MyPosition<E> implements Edge<E> {
 
-        /** The end vertices of the edge. */
+        /** @return End vertices of the edge. */
         private MyVertex<V>[] endVertices;
 
-        /** The positions of the entries for the edge in the incidence
+        /** @return positions of the entries for the edge in the incidence
          * containers of the end vertices. */
         private Position<Edge<E>>[] Inc;
 
-        /** The position of the edge in the edge container of the
+        /** @return osition of the edge in the edge container of the
          * graph. */
         private Position<Edge<E>> loc;
 
@@ -247,13 +247,13 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             Inc = (Position<Edge<E>>[]) new Position[2];
         }
 
-        /** Returns the end vertices of the edge. There are always two
+        /** @return End vertices of the edge. There are always two
          * elements in the returned array. */
         MyVertex<V>[] endVertices() {
             return endVertices;
         }
 
-        /** Returns the positions of the edge in the incidence containers
+        /** @return Positions of the edge in the incidence containers
          * of its end vertices.  The returned array always contains two
          * elements. */
         Position<Edge<E>>[] incidences() {
@@ -267,7 +267,7 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             Inc[1] = pw;
         }
 
-        /** Returns the position of the edge in the edge container of the
+        /** @return Position of the edge in the edge container of the
          * graph. */
         Position<Edge<E>> location() {
             return loc;
@@ -279,7 +279,7 @@ public class AdjacencyListGraph<V, E> implements Graph<V, E> {
             loc = p;
         }
 
-        /** Returns a string representation of the edge via a tuple of
+        /** @return A string representation of the edge via a tuple of
          * vertices. */
         public String toString() {
             return "(" + endVertices[0].toString() + "," + endVertices[1].toString() + ")";

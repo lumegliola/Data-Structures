@@ -28,7 +28,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
             return checkedPosition.getLeft();
         }
         else
-            throw new BoundaryViolationException("The left child not exist.");
+            throw new BoundaryViolationException("Left child not exist.");
     }
 
     @Override
@@ -38,7 +38,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
             return checkedPosition.getRight();
         }
         else
-            throw new BoundaryViolationException("The right child not exist.");
+            throw new BoundaryViolationException("Right child not exist.");
     }
 
     @Override
@@ -100,7 +100,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
     public Position<E> parent(Position<E> node) throws InvalidPositionException, BoundaryViolationException {
         BinaryTreePosition<E> checkedNode = checkPosition(node);
         if (checkedNode == this.root)
-            throw new BoundaryViolationException("The root node doesn't have a parent.");
+            throw new BoundaryViolationException("Root node doesn't have a parent.");
 
         return checkedNode.getParent();
     }
@@ -135,18 +135,18 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
     /**Adds a root if the tree is empty.*/
     public Position<E> addRoot(E e) throws NonEmptyTreeException {
         if(!isEmpty())
-            throw new NonEmptyTreeException("The tree already have a root node.");
+            throw new NonEmptyTreeException("Tree already have a root node.");
         size = 1;
         root = new BinaryTreeNode<>(e,null,null,null);
         return root;
     }
 
-    /**Adds a left child at the chosed node.*/
+    /**Adds a left child at the chosen node.*/
     public Position<E> insertLeft(Position<E> position, E element) throws InvalidPositionException {
         BinaryTreePosition<E> checkedPosition = checkPosition(position);
         Position<E> leftPos = checkedPosition.getLeft();
         if (leftPos != null)
-            throw new InvalidPositionException("The node already had a left child.");
+            throw new InvalidPositionException("Node already had a left child.");
 
         BinaryTreePosition<E> toAdd = new BinaryTreeNode<>(element, null, null, checkedPosition);
         checkedPosition.setLeft(toAdd);
@@ -154,12 +154,12 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         return toAdd;
     }
 
-    /**Adds a right child at the chosed node.*/
+    /**Adds a right child at the chosen node.*/
     public Position<E> insertRight(Position<E> position, E element) throws InvalidPositionException {
         BinaryTreePosition<E> checkedPosition = checkPosition(position);
         Position<E> rightPos = checkedPosition.getRight();
         if (rightPos != null)
-            throw new InvalidPositionException("The node already had a right child.");
+            throw new InvalidPositionException("Node already had a right child.");
 
         BinaryTreePosition<E> toAdd = new BinaryTreeNode<>(element, null, null, checkedPosition);
         checkedPosition.setRight(toAdd);
@@ -221,12 +221,12 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
                 }
             }
         }
-        else throw new InvalidPositionException("The chosen node isn't a leaf.");
+        else throw new InvalidPositionException("Chosen node isn't a leaf.");
     }
 
     private BinaryTreePosition<E> checkPosition(Position<E> v) throws InvalidPositionException {
         if (v == null || !(v instanceof BinaryTreePosition))
-            throw new InvalidPositionException("The position is invalid.");
+            throw new InvalidPositionException("Position is invalid.");
         return (BinaryTreePosition<E>) v;
     }
 

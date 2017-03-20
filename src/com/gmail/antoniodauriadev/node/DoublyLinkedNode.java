@@ -7,9 +7,9 @@ public class DoublyLinkedNode<E> {
     private DoublyLinkedNode<E> prev;
 
     /**Creates a doubly linked node.
-     * @param element The node's element.
-     * @param next The next node.
-     * @param prev The previous node.*/
+     * @param element Element of the node.
+     * @param next Next node.
+     * @param prev Previous node.*/
     public DoublyLinkedNode(E element, DoublyLinkedNode<E> next, DoublyLinkedNode<E> prev) {
         setElement(element);
         setNext(next);
@@ -21,32 +21,32 @@ public class DoublyLinkedNode<E> {
         this(null, null, null);
     }
 
-    /**@return The node's element*/
+    /**@return Element of the node.*/
     public E getElement() {
         return this.element;
     }
 
-    /**Sets the node's element*/
+    /**Sets the element of the node.*/
     public void setElement(E element) {
         this.element = element;
     }
 
-    /**@return The next node*/
+    /**@return Next node.*/
     public DoublyLinkedNode<E> getNext() {
         return this.next;
     }
 
-    /**Sets the next node*/
+    /**Sets the next node.*/
     public void setNext(DoublyLinkedNode<E> next) {
         this.next = next;
     }
 
-    /**@return The previous node*/
+    /**@return Previous node.*/
     public DoublyLinkedNode<E> getPrev() {
         return this.prev;
     }
 
-    /**Sets the previous node*/
+    /**Sets the previous node.*/
     public void setPrev(DoublyLinkedNode<E> prev) {
         this.prev = prev;
     }

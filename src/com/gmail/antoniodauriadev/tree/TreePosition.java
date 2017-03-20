@@ -9,17 +9,17 @@ interface TreePosition<E> extends Position<E> {
      * @param element Element to set.*/
     void setElement(E element);
 
-    /**@return A children's position list.*/
+    /**@return Position list of the children.*/
     PositionList<Position<E>> getChildren();
 
-    /**Sets the node's children.
-     * @param children Children's position list.*/
+    /**Sets the children of the node.
+     * @param children Position list of the children.*/
     void setChildren(PositionList<Position<E>> children);
 
-    /**@return The node's parent.*/
+    /**@return Parent of the node.*/
     TreePosition<E> getParent();
 
-    /**Sets the node's parent.
-     * @param parentPosition Parent's position.*/
+    /**Sets the parent of the node.
+     * @param parentPosition Position of the parent.*/
     void setParent(TreePosition<E> parentPosition);
 }

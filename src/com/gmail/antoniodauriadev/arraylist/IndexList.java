@@ -5,22 +5,22 @@ import com.gmail.antoniodauriadev.exceptions.arraylist.IndexOutOfBoundsException
 
 interface IndexList<E> extends Iterable<E>{
 
-    /**@return The arraylist's size.*/
+    /**@return Size of the arraylist.*/
     int size();
 
     /**@return True if the arraylist is empty.*/
     boolean isEmpty();
 
     /**Adds an element to the next position.
-     * @param element element to add.*/
+     * @param element Element to add.*/
     void add(E element);
 
     /**Adds an element.
-     * @param i position.
-     * @param element element to add.*/
+     * @param i Position.
+     * @param element Element to add.*/
     void add(int i, E element) throws IndexOutOfBoundsException;
 
-    /**@return The element in the required position.
+    /**@return Element in the required position.
      * @param i Position.*/
     E get(int i) throws IndexOutOfBoundsException;
 
@@ -36,8 +36,8 @@ interface IndexList<E> extends Iterable<E>{
 
     /**Sets an element in the required position.
      * @param i Position.
-     * @param element element to set.*
-     * @return The previous element in the required position*/
+     * @param element Element to set.*
+     * @return Previous element in the required position*/
     E set(int i, E element) throws IndexOutOfBoundsException;
 
 }

@@ -6,7 +6,7 @@ import com.gmail.antoniodauriadev.exceptions.entry.InvalidKeyException;
 
 public interface PriorityQueue<K, V> {
 
-    /**@return The priority queue' size.*/
+    /**@return Size of the priority queue.*/
     int size();
 
     /**@return True if the priority queue is empty.*/
@@ -15,7 +15,7 @@ public interface PriorityQueue<K, V> {
     /**@return An entry with a less key without removing it.*/
     Entry<K,V> min() throws EmptyPriorityQueueException;
 
-    /**Inserts a key-value' couple.
+    /**Inserts a key-value couple.
      * @return The creates entry.*/
     Entry<K,V> insert(K key, V value) throws InvalidKeyException;
 

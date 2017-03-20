@@ -2,10 +2,10 @@ package com.gmail.antoniodauriadev.entry;
 
 public interface Entry<K,V> {
 
-    /**@return The key.*/
+    /**@return Key.*/
     K getKey();
 
-    /**@return The Value.*/
+    /**@return Value.*/
     V getValue();
 
 }

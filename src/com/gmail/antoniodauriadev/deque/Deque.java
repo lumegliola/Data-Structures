@@ -4,29 +4,29 @@ import com.gmail.antoniodauriadev.exceptions.deque.EmptyDequeException;
 
 interface Deque<E> {
 
-    /**@return The deque's size.*/
+    /**@return Size of the deque.*/
     int size();
 
     /**@return True if the deque is empty.*/
     boolean isEmpty();
 
-    /**@return The first element*/
+    /**@return First element.*/
     E getFirst() throws EmptyDequeException;
 
-    /**@return The last element*/
+    /**@return Last element.*/
     E getLast() throws EmptyDequeException;
 
-    /**Adds an element in the first position*/
+    /**Adds an element in the first position.*/
     void addFirst(E element);
 
-    /**Adds an element in the last position*/
+    /**Adds an element in the last position.*/
     void addLast(E element);
 
-    /**Removes the element in the first position
-     * @return The first item removed*/
+    /**Removes the element in the first position.
+     * @return Removed item.*/
     E removeFirst() throws EmptyDequeException;
 
-    /**Removes the element in the last posizion
-     * @return the last item removed*/
+    /**Removes the element in the last position.
+     * @return Removed item.*/
     E removeLast() throws EmptyDequeException;
 }

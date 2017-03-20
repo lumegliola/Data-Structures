@@ -78,7 +78,7 @@ public class SortedListPriorityQueue<K, V> implements PriorityQueue<K, V> {
         comparator = comp;
     }
 
-    /**Determines the key's validity.*/
+    /**Determines validity of the key.*/
     private boolean checkKey(K key) throws InvalidKeyException {
         boolean result;
         try {
