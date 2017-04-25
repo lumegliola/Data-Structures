@@ -28,7 +28,7 @@ public interface Graph<V, E> {
     Iterable<Edge<E>> incidentEdges(Vertex<V> vertex) throws InvalidPositionException;
 
     /**@return Vertices of an edge as an array of length 2.*/
-    Vertex[] endVertices(Edge<E> edge) throws InvalidPositionException;
+    Vertex<V>[] endVertices(Edge<E> edge) throws InvalidPositionException;
 
     /**@return Other end vertex of an incident edge.*/
     Vertex<V> opposite(Vertex<V> vertex, Edge<E> edge) throws InvalidPositionException;
