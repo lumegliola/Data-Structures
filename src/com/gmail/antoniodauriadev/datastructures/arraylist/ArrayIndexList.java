@@ -5,28 +5,33 @@ import java.util.Iterator;
 import com.gmail.antoniodauriadev.datastructures.exceptions.arraylist.ElementNotFoundException;
 import com.gmail.antoniodauriadev.datastructures.exceptions.arraylist.IndexOutOfBoundsException;
 
-public class ArrayIndexList<E> implements IndexList<E> {
+public class ArrayIndexList<E> implements IndexList<E> 
+{
 
     private E[] list;
     private int size;
 
-    public ArrayIndexList() {
+    public ArrayIndexList() 
+    {
         this.size = 0;
         this.list = (E[]) new Object[16];
     }
 
     @Override
-    public int size() {
+    public int size() 
+    {
         return this.size;
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean isEmpty() 
+    {
         return size() == 0;
     }
 
     @Override
-    public void add(E element) {
+    public void add(E element) 
+    {
         if (size() == this.list.length)
             duplicateCapacity();
 
@@ -35,7 +40,8 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public void add(int i, E element) throws IndexOutOfBoundsException {
+    public void add(int i, E element) throws IndexOutOfBoundsException 
+    {
         if (i > size() || i < 0)
             throw new IndexOutOfBoundsException();
 
@@ -48,7 +54,8 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E get(int i) throws IndexOutOfBoundsException {
+    public E get(int i) throws IndexOutOfBoundsException 
+    {
         if (i >= size() || i < 0)
             throw new IndexOutOfBoundsException();
 
@@ -56,7 +63,8 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E remove(int i) throws IndexOutOfBoundsException {
+    public E remove(int i) throws IndexOutOfBoundsException 
+    {
         if (i >= size() || i < 0)
             throw new IndexOutOfBoundsException();
 
@@ -67,10 +75,13 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E remove(E element) throws ElementNotFoundException, IndexOutOfBoundsException {
+    public E remove(E element) throws ElementNotFoundException, IndexOutOfBoundsException
+    {
         int i = 0;
-        for (E e : this) {
-            if (e == element) {
+        for (E e : this) 
+        {
+            if (e == element) 
+            {
                 remove(i);
                 return e;
             }
@@ -80,7 +91,8 @@ public class ArrayIndexList<E> implements IndexList<E> {
     }
 
     @Override
-    public E set(int i, E element) throws IndexOutOfBoundsException {
+    public E set(int i, E element) throws IndexOutOfBoundsException 
+    {
         if (i >= size() || i < 0)
             throw new IndexOutOfBoundsException();
 
@@ -89,23 +101,28 @@ public class ArrayIndexList<E> implements IndexList<E> {
         return  prevElement;
     }
 
-    private void duplicateCapacity() {
+    private void duplicateCapacity() 
+    {
         E[] newList = (E[]) new Object[list.length * 2];
         System.arraycopy(this.list, 0, newList, 0, list.length);
         this.list = newList;
     }
 
     @Override
-    public Iterator<E> iterator() {
+    public Iterator<E> iterator() 
+    {
         return new ElementIterator<>(this);
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         String s = "ArrayIndexList: (";
         boolean first = true;
-        for(E e : this) {
-            if (first) {
+        for(E e : this) 
+        {
+            if (first) 
+            {
                 first = false;
                 s = s + e.toString();
             }
